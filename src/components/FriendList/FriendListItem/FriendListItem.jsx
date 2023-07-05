@@ -15,6 +15,7 @@ const Item = styled.li`
     padding: 4px;
     padding-left: 7px;
     align-items: center;
+    background-color: #FFF;
     box-shadow: 1px 1px 1px 1px rgba(1, 1, 1, 0.1);
     p {
         font-size: 16px;
