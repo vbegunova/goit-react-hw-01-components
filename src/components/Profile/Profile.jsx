@@ -1,18 +1,7 @@
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { ProfileInfo } from 'components/Profile/ProfileInfo/ProfileInfo';
 import { ProfileStats } from 'components/Profile/ProfileStats/ProfileStats';
-
-const Container = styled.div`
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #E4E9F0;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 1px 1px 10px 2px rgba(1, 1, 1, 0.1);
-    margin-top: 20px;
-    margin-bottom: 40px;
-`
+import { Container } from './Profile.styled';
 
 export const Profile = ({ name, tag, location, avatar, stats }) => {
     return (
@@ -21,4 +10,12 @@ export const Profile = ({ name, tag, location, avatar, stats }) => {
             <ProfileStats stats={stats}/>
         </Container>
     );
+}
+
+Profile.propTypes = {
+    name: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string,
+    stats: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
 }

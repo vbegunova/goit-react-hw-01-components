@@ -1,30 +1,6 @@
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { TransactionHistoryItem } from "./TransactionHistoryItem/TransactionHistoryItem";
-
-const Table = styled.table`
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    width: 750px;
-    border-collapse: collapse;
-    th, td {
-        padding: 14px;
-        text-align: center;
-    }
-    th:not(:last-child) {
-        border-right: 1px solid #ffffff;
-    }
-    td {
-        border: 1px solid #E0E6E8;
-    }
-`
-
-const TableHeader = styled.th`
-    text-transform: uppercase;
-    font-size: 12px;
-    background-color: #00BCD5;
-    color: #FFF;
-`
+import { Table, TableHeader } from './TransactionHistory.styled';
 
 export const TransactionHistory = ({ items }) => {
     return(
@@ -41,4 +17,15 @@ export const TransactionHistory = ({ items }) => {
             </tbody>
         </Table>
     );
+}
+
+TransactionHistory.propTypes = {
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          type: PropTypes.string.isRequired,
+          amount: PropTypes.string.isRequired,
+          currency: PropTypes.string.isRequired,
+        })
+      ).isRequired,
 }
