@@ -11,7 +11,7 @@ const Container = styled.div`
     margin-right: auto;
     box-shadow: 1px 1px 10px 2px rgba(1, 1, 1, 0.1);
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 `
 
 export const Profile = ({ name, tag, location, avatar, stats }) => {
