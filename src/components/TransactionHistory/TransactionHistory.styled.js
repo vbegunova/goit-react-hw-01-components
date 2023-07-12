@@ -24,3 +24,15 @@ export const TableHeader = styled.th`
     background-color: #00BCD5;
     color: #FFF;
 `
+
+export const TableData = styled.td`
+    text-transform: capitalize;
+    font-size: 13px;
+    color: #838588;
+`
+
+export const TableRow = styled.tr`
+    &:nth-child(2n) {
+        background-color: #e3e8ec;
+    }
+`

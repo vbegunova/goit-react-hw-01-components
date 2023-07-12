@@ -5,18 +5,22 @@ import { FriendListItem } from "./FriendListItem/FriendListItem";
 export const FriendList = ({ friends }) => {
     return (
         <List>
-            <FriendListItem data={friends}/>
+          {friends.map(item => {
+            return <FriendListItem 
+              key={item.id} 
+              avatar={item.avatar} 
+              name={item.name} 
+              isOnline={item.isOnline}
+            />
+          })}
         </List>
     );
 }
 
-FriendListItem.propTypes = {
-    data: PropTypes.arrayOf(
+FriendList.propTypes = {
+    friends: PropTypes.arrayOf(
       PropTypes.shape({
-        isOnline: PropTypes.bool.isRequired,
-        avatar: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired,
-      })
+      }).isRequired
     ).isRequired,
   };
